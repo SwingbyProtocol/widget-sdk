@@ -1,0 +1,64 @@
+{
+  "name": "@swingby-protocol/widget",
+  "version": "0.0.0-development",
+  "module": "dist/widget.esm.js",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "eslint .",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json,md,mdx,html}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "size-limit": [
+    {
+      "path": "dist/widget.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/widget.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "peerDependencies": {
+    "@swingby-protocol/sdk": "^1.0.0-alpha.25"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^4.9.0",
+    "@swingby-protocol/eslint-config": "^1.3.0",
+    "@swingby-protocol/prettier-config": "^1.0.2",
+    "@swingby-protocol/sdk": "^1.0.0-alpha.25",
+    "cypress": "^6.0.1",
+    "husky": "^4.3.0",
+    "semantic-release": "^17.3.0",
+    "size-limit": "^4.9.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.1.2"
+  },
+  "resolutions": {
+    "**/@typescript-eslint/eslint-plugin": "4.8.1"
+  },
+  "dependencies": {
+    "@percy/cypress": "^2.3.2"
+  }
+}

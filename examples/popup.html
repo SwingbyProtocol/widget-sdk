@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <button id="button">Click me!</button>
+
+    <script type="module">
+      import { SwapWidget } from '../dist/widget.esm.js';
+
+      const widget = SwapWidget({ mode: 'test', variant: 'big' });
+      document.querySelector('#button').addEventListener('click', () => {
+        widget.open();
+      });
+    </script>
+  </body>
+</html>

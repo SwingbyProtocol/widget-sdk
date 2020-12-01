@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="banner-narrow" class="widget-container narrow"></div>
+    <div id="banner-wide" class="widget-container"></div>
+    <div id="small" class="widget-container widget-width"></div>
+    <div id="big" class="widget-container widget-width"></div>
+
+    <script type="module">
+      import { SwapWidget } from '../dist/widget.esm.js';
+
+      const bannerWidget = SwapWidget({ mode: 'test', variant: 'banner' });
+      document.querySelector('#banner-narrow').innerHTML = bannerWidget.getHtml();
+      document.querySelector('#banner-wide').innerHTML = bannerWidget.getHtml();
+
+      const smallWidget = SwapWidget({ mode: 'test', variant: 'small' });
+      document.querySelector('#small').innerHTML = smallWidget.getHtml();
+
+      const bigWidget = SwapWidget({ mode: 'test', variant: 'big' });
+      document.querySelector('#big').innerHTML = bigWidget.getHtml();
+    </script>
+  </body>
+</html>
