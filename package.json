@@ -15,6 +15,15 @@
   "engines": {
     "node": ">=12"
   },
+  "keywords": [
+    "Crypto",
+    "Bitcoin",
+    "JavaScript",
+    "NodeJS",
+    "Swingby",
+    "ECDSA",
+    "Trustless"
+  ],
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
