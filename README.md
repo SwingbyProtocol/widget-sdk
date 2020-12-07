@@ -1,4 +1,4 @@
-Easily load Swingby's swap widget in your app.
+Small util to load Swingby's swap widget in your app.
 
 ## Quick start
 
@@ -26,7 +26,7 @@ document.querySelector('#my-container').innerHTML = getHtml({ widget });
 
 ## Widget sizes
 
-⚠️ Note that both the widget and this SDK use `rem` units.
+⚠️ Note that both the widget and this util use `rem` units.
 
 |        | Height (assuming 1rem = 16px) |
 | ------ | ----------------------------- |

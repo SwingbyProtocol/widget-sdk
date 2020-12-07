@@ -16,7 +16,7 @@ type Options<M extends Mode> = {
 
 export const createWidget = <M extends Mode>({
   mode,
-  iframeTitle = 'Swingby Skybridge Widget',
+  iframeTitle = 'Swingby Swap Widget',
   variant,
   defaultCurrencyIn,
   defaultCurrencyOut,
