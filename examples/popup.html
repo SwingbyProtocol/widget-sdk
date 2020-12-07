@@ -8,11 +8,11 @@
     <button id="button">Click me!</button>
 
     <script type="module">
-      import { SwapWidget } from '../dist/widget.esm.js';
+      import { createWidget, openPopup } from '../dist/widget.esm.js';
 
-      const widget = SwapWidget({ mode: 'test', variant: 'big' });
+      const widget = createWidget({ mode: 'test', variant: 'big' });
       document.querySelector('#button').addEventListener('click', () => {
-        widget.open();
+        openPopup(widget);
       });
     </script>
   </body>

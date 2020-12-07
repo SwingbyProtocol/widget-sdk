@@ -11,17 +11,17 @@
     <div id="big" class="widget-container widget-width"></div>
 
     <script type="module">
-      import { SwapWidget } from '../dist/widget.esm.js';
+      import { createWidget, getHtml } from '../dist/widget.esm.js';
 
-      const bannerWidget = SwapWidget({ mode: 'test', variant: 'banner' });
-      document.querySelector('#banner-narrow').innerHTML = bannerWidget.getHtml();
-      document.querySelector('#banner-wide').innerHTML = bannerWidget.getHtml();
+      const bannerWidget = createWidget({ mode: 'test', variant: 'banner' });
+      document.querySelector('#banner-narrow').innerHTML = getHtml(bannerWidget);
+      document.querySelector('#banner-wide').innerHTML = getHtml(bannerWidget);
 
-      const smallWidget = SwapWidget({ mode: 'test', variant: 'small' });
-      document.querySelector('#small').innerHTML = smallWidget.getHtml();
+      const smallWidget = createWidget({ mode: 'test', variant: 'small' });
+      document.querySelector('#small').innerHTML = getHtml(smallWidget);
 
-      const bigWidget = SwapWidget({ mode: 'test', variant: 'big' });
-      document.querySelector('#big').innerHTML = bigWidget.getHtml();
+      const bigWidget = createWidget({ mode: 'test', variant: 'big' });
+      document.querySelector('#big').innerHTML = getHtml(bigWidget);
     </script>
   </body>
 </html>

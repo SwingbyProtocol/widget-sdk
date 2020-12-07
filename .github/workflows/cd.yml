@@ -21,7 +21,9 @@ jobs:
         run: yarn build
 
       - name: UI tests
-        run: yarn percy exec -- cypress run -e CI=true
+        run: |
+          yarn snowpack dev & yarn wait-on http://localhost:8080/examples/popup
+          yarn percy exec -- cypress run -e CI=true
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 
