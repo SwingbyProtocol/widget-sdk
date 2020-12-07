@@ -23,3 +23,13 @@ import { createWidget, getHtml } from '@swingby-protocol/widget';
 const widget = createWidget({ mode: 'test', variant: 'banner' });
 document.querySelector('#my-container').innerHTML = getHtml({ widget });
 ```
+
+## Widget sizes
+
+⚠️ Note that both the widget and this SDK use `rem` units.
+
+|        | Height (assuming 1rem = 16px) |
+| ------ | ----------------------------- |
+| Banner | 76px                          |
+| Small  | 375px                         |
+| Big    | 510px                         |
