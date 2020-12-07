@@ -12,7 +12,7 @@
 
       const widget = createWidget({ mode: 'test', variant: 'big' });
       document.querySelector('#button').addEventListener('click', () => {
-        openPopup(widget);
+        openPopup({ widget });
       });
     </script>
   </body>

@@ -14,14 +14,14 @@
       import { createWidget, getHtml } from '../dist/widget.esm.js';
 
       const bannerWidget = createWidget({ mode: 'test', variant: 'banner' });
-      document.querySelector('#banner-narrow').innerHTML = getHtml(bannerWidget);
-      document.querySelector('#banner-wide').innerHTML = getHtml(bannerWidget);
+      document.querySelector('#banner-narrow').innerHTML = getHtml({ widget: bannerWidget });
+      document.querySelector('#banner-wide').innerHTML = getHtml({ widget: bannerWidget });
 
       const smallWidget = createWidget({ mode: 'test', variant: 'small' });
-      document.querySelector('#small').innerHTML = getHtml(smallWidget);
+      document.querySelector('#small').innerHTML = getHtml({ widget: smallWidget });
 
       const bigWidget = createWidget({ mode: 'test', variant: 'big' });
-      document.querySelector('#big').innerHTML = getHtml(bigWidget);
+      document.querySelector('#big').innerHTML = getHtml({ widget: bigWidget });
     </script>
   </body>
 </html>
