@@ -14,7 +14,7 @@ export const openPopup = ({ widget, zIndex = 9000 }: { widget: Widget; zIndex?: 
   popupContainer = document.createElement('div');
   popupContainer.setAttribute(
     'style',
-    `background: #1c232f33; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; display: flex; align-items: center; justify-content: center; zIndex: ${zIndex};`,
+    `background: #1c232f33; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; display: flex; align-items: center; justify-content: center; z-index: ${zIndex};`,
   );
   popupContainer.addEventListener('click', closePopup);
 
