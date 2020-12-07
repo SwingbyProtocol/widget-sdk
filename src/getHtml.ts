@@ -1,3 +1,3 @@
 import type { Widget } from './Widget';
 
-export const getHtml = ({ iframe }: Widget) => iframe;
+export const getHtml = ({ widget: { iframe } }: { widget: Widget }) => iframe;

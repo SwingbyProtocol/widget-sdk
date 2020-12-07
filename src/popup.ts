@@ -8,12 +8,13 @@ export const closePopup = () => {
   popupContainer = null;
 };
 
-export const openPopup = ({ iframe }: Widget) => {
+export const openPopup = ({ widget, zIndex = 9000 }: { widget: Widget; zIndex?: number }) => {
+  if (typeof document === 'undefined') return;
   if (popupContainer) return;
   popupContainer = document.createElement('div');
   popupContainer.setAttribute(
     'style',
-    'background: #1c232f33; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; display: flex; align-items: center; justify-content: center;',
+    `background: #1c232f33; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; display: flex; align-items: center; justify-content: center; zIndex: ${zIndex};`,
   );
   popupContainer.addEventListener('click', closePopup);
 
@@ -24,7 +25,7 @@ export const openPopup = ({ iframe }: Widget) => {
       445 / 16
     }rem; width: 100%; box-shadow: 0px 50px 78px -10px rgba(43, 55, 74, 0.152644); border-radius: 14px; overflow: hidden;`,
   );
-  box.innerHTML = iframe;
+  box.innerHTML = widget.iframe;
 
   popupContainer.appendChild(box);
 
