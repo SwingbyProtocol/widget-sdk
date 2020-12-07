@@ -2,6 +2,14 @@ Easily load Swingby's swap widget in your app.
 
 ## Quick start
 
+### Installation
+
+```bash
+yarn add @swingby-protocol/widget @swingby-protocol/sdk
+```
+
+### Examples
+
 ```tsx
 import { createWidget, openPopup } from '@swingby-protocol/widget';
 
