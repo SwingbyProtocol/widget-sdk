@@ -24,7 +24,7 @@ export const openPopup = ({ iframe }: Widget) => {
       445 / 16
     }rem; width: 100%; box-shadow: 0px 50px 78px -10px rgba(43, 55, 74, 0.152644); border-radius: 14px; overflow: hidden;`,
   );
-  box.appendChild(iframe);
+  box.innerHTML = iframe;
 
   popupContainer.appendChild(box);
 

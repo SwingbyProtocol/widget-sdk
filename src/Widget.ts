@@ -1,1 +1,1 @@
-export type Widget = { iframe: HTMLIFrameElement };
+export type Widget = { url: string; iframe: string };

@@ -24,9 +24,7 @@ export const createWidget = <M extends Mode>({
   defaultCurrencyOut,
   defaultAddressUserIn,
 }: Options<M>): Widget => {
-  const iframe = document.createElement('iframe');
-  iframe.title = iframeTitle;
-  iframe.src = stringifyUrl({
+  const url = stringifyUrl({
     url: `https://widget-seven.vercel.app/${mode === 'test' ? 'test/' : ''}swap/${
       swapHash ?? 'new'
     }`,
@@ -36,10 +34,11 @@ export const createWidget = <M extends Mode>({
       defaultAddressUserIn,
     },
   });
-  iframe.setAttribute(
-    'style',
-    `border: none; display: block; width: 100%; height: ${getHeight({ variant })};`,
-  );
 
-  return { iframe };
+  return {
+    url,
+    iframe: `<iframe title="${iframeTitle}" src="${url}" style="border: none; display: block; width: 100%; height: ${getHeight(
+      { variant },
+    )};"></iframe>`,
+  };
 };
