@@ -13,7 +13,7 @@ yarn add @swingby-protocol/widget @swingby-protocol/sdk
 ```tsx
 import { createWidget, openPopup } from '@swingby-protocol/widget';
 
-const widget = createWidget({ mode: 'test', variant: 'banner' });
+const widget = createWidget({ mode: 'test', variant: 'big' });
 openPopup({ widget });
 ```
 
