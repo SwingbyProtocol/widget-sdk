@@ -12,12 +12,14 @@ type Options<M extends Mode> = {
   defaultCurrencyIn?: Coin<M>;
   defaultCurrencyOut?: Coin<M>;
   defaultAddressUserIn?: string;
+  swapHash?: string;
 };
 
 export const createWidget = <M extends Mode>({
   mode,
   iframeTitle = 'Swingby Swap Widget',
   variant,
+  swapHash,
   defaultCurrencyIn,
   defaultCurrencyOut,
   defaultAddressUserIn,
@@ -25,7 +27,9 @@ export const createWidget = <M extends Mode>({
   const iframe = document.createElement('iframe');
   iframe.title = iframeTitle;
   iframe.src = stringifyUrl({
-    url: `https://widget-seven.vercel.app/${mode === 'test' ? 'test/' : ''}swap/new`,
+    url: `https://widget-seven.vercel.app/${mode === 'test' ? 'test/' : ''}swap/${
+      swapHash ?? 'new'
+    }`,
     query: {
       defaultCurrencyIn,
       defaultCurrencyOut,
