@@ -25,7 +25,7 @@ export const openPopup = ({ widget, zIndex = 9000 }: { widget: Widget; zIndex?: 
       445 / 16
     }rem; width: 100%; box-shadow: 0px 50px 78px -10px rgba(43, 55, 74, 0.152644); border-radius: 14px; overflow: hidden;`,
   );
-  box.innerHTML = widget.iframe;
+  box.innerHTML = widget.__sswi__iframe;
 
   popupContainer.appendChild(box);
 

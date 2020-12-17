@@ -1,33 +1,33 @@
-import type { Coin, Mode } from '@swingby-protocol/sdk';
+import type { SkybridgeCoin, SkybridgeMode, SkybridgeResource } from '@swingby-protocol/sdk';
 import { stringifyUrl } from 'query-string';
 
-import type { Variant } from './Variant';
+import type { Size } from './Size';
 import type { Widget } from './Widget';
 import { getHeight } from './getHeight';
 
-type Options<M extends Mode> = {
+type Options<R extends SkybridgeResource, M extends SkybridgeMode> = {
+  resource: R;
   mode: M;
-  variant: Variant;
+  size: Size;
   iframeTitle?: string;
-  defaultCurrencyIn?: Coin<M>;
-  defaultCurrencyOut?: Coin<M>;
+  defaultCurrencyIn?: SkybridgeCoin<R, M, 'in'>;
+  defaultCurrencyOut?: SkybridgeCoin<R, M, 'out'>;
   defaultAddressUserIn?: string;
-  swapHash?: string;
+  hash?: string;
 };
 
-export const createWidget = <M extends Mode>({
+export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMode>({
+  resource,
   mode,
-  iframeTitle = 'Swingby Swap Widget',
-  variant,
-  swapHash,
+  iframeTitle = 'Skybridge Swap Widget',
+  size,
+  hash,
   defaultCurrencyIn,
   defaultCurrencyOut,
   defaultAddressUserIn,
-}: Options<M>): Widget => {
+}: Options<R, M>): Widget => {
   const url = stringifyUrl({
-    url: `https://widget-seven.vercel.app/${mode === 'test' ? 'test/' : ''}swap/${
-      swapHash ?? 'new'
-    }`,
+    url: `https://widget-seven.vercel.app/${mode}/${resource}/${hash ?? 'new'}`,
     query: {
       defaultCurrencyIn,
       defaultCurrencyOut,
@@ -36,9 +36,9 @@ export const createWidget = <M extends Mode>({
   });
 
   return {
-    url,
-    iframe: `<iframe title="${iframeTitle}" src="${url}" style="border: none; display: block; width: 100%; height: ${getHeight(
-      { variant },
+    __sswi__url: url,
+    __sswi__iframe: `<iframe title="${iframeTitle}" src="${url}" style="border: none; display: block; width: 100%; height: ${getHeight(
+      { size },
     )};"></iframe>`,
   };
 };

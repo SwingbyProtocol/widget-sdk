@@ -10,7 +10,7 @@
     <script type="module">
       import { createWidget, openPopup } from '../dist/widget.esm.js';
 
-      const widget = createWidget({ mode: 'test', variant: 'big' });
+      const widget = createWidget({ mode: 'test', resource: 'swap', size: 'big' });
       document.querySelector('#button').addEventListener('click', () => {
         openPopup({ widget });
       });
