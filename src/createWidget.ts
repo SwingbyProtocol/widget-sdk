@@ -13,6 +13,7 @@ type Options<R extends SkybridgeResource, M extends SkybridgeMode> = {
   defaultCurrencyIn?: SkybridgeCoin<R, M, 'in'>;
   defaultCurrencyOut?: SkybridgeCoin<R, M, 'out'>;
   defaultAddressUserIn?: string;
+  defaultAmountUser?: string;
   hash?: string;
 };
 
@@ -25,6 +26,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   defaultCurrencyIn,
   defaultCurrencyOut,
   defaultAddressUserIn,
+  defaultAmountUser,
 }: Options<R, M>): Widget => {
   const url = stringifyUrl({
     url: `https://widget-seven.vercel.app/${mode}/${resource}/${hash ?? 'new'}`,
@@ -32,6 +34,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
       defaultCurrencyIn,
       defaultCurrencyOut,
       defaultAddressUserIn,
+      defaultAmountUser,
     },
   });
 
