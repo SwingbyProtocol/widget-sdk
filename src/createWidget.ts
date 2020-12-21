@@ -27,7 +27,6 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   size,
   hash,
   theme = 'auto',
-  primaryColor,
   defaultCurrencyIn,
   defaultCurrencyOut,
   defaultAddressUserIn,
@@ -41,7 +40,6 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
       defaultAddressUserIn,
       defaultAmountUser,
       theme,
-      primaryColor,
     },
   });
 
