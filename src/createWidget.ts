@@ -15,6 +15,9 @@ type Options<R extends SkybridgeResource, M extends SkybridgeMode> = {
   defaultAddressUserIn?: string;
   defaultAmountUser?: string;
   hash?: string;
+  /** @default `auto` */
+  theme?: 'light' | 'dark' | 'auto';
+  primaryColor?: string;
 };
 
 export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMode>({
@@ -23,6 +26,8 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   iframeTitle = 'Skybridge Swap Widget',
   size,
   hash,
+  theme = 'auto',
+  primaryColor,
   defaultCurrencyIn,
   defaultCurrencyOut,
   defaultAddressUserIn,
@@ -35,6 +40,8 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
       defaultCurrencyOut,
       defaultAddressUserIn,
       defaultAmountUser,
+      theme,
+      primaryColor,
     },
   });
 
