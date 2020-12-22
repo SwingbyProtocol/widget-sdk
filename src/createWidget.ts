@@ -45,7 +45,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
 
   return {
     __sswi__url: url,
-    __sswi__iframe: `<iframe title="${iframeTitle}" src="${url}" style="border: none; display: block; width: 100%; height: ${getHeight(
+    __sswi__iframe: `<iframe allow="clipboard-write" title="${iframeTitle}" src="${url}" style="border: none; display: block; width: 100%; height: ${getHeight(
       { size },
     )};"></iframe>`,
   };
