@@ -10,10 +10,10 @@ type Options<R extends SkybridgeResource, M extends SkybridgeMode> = {
   mode: M;
   size: Size;
   iframeTitle?: string;
-  defaultCurrencyIn?: SkybridgeCoin<R, M, 'in'>;
-  defaultCurrencyOut?: SkybridgeCoin<R, M, 'out'>;
-  defaultAddressUserIn?: string;
-  defaultAmountUser?: string;
+  defaultCurrencyDeposit?: SkybridgeCoin<R, M, 'in'>;
+  defaultCurrencyReceiving?: SkybridgeCoin<R, M, 'out'>;
+  defaultAddressReceiving?: string;
+  defaultAmountDesired?: string;
   hash?: string;
   /** @default `auto` */
   theme?: 'light' | 'dark' | 'auto';
@@ -27,18 +27,18 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   size,
   hash,
   theme = 'auto',
-  defaultCurrencyIn,
-  defaultCurrencyOut,
-  defaultAddressUserIn,
-  defaultAmountUser,
+  defaultCurrencyDeposit,
+  defaultCurrencyReceiving,
+  defaultAddressReceiving,
+  defaultAmountDesired,
 }: Options<R, M>): Widget => {
   const url = stringifyUrl({
     url: `https://widget-seven.vercel.app/${mode}/${resource}/${hash ?? 'new'}`,
     query: {
-      defaultCurrencyIn,
-      defaultCurrencyOut,
-      defaultAddressUserIn,
-      defaultAmountUser,
+      defaultCurrencyDeposit,
+      defaultCurrencyReceiving,
+      defaultAddressReceiving,
+      defaultAmountDesired,
       theme,
     },
   });
