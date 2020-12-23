@@ -33,7 +33,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   defaultAmountDesired,
 }: Options<R, M>): Widget => {
   const url = stringifyUrl({
-    url: `https://widget-seven.vercel.app/${mode}/${resource}/${hash ?? 'new'}`,
+    url: `https://widget.skybridge.exchange/${mode}/${resource}/${hash ?? 'new'}`,
     query: {
       defaultCurrencyDeposit,
       defaultCurrencyReceiving,
