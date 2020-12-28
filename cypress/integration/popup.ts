@@ -1,6 +1,6 @@
 describe('Popup', () => {
   it('opens popup', () => {
-    cy.visit('../../examples/popup.html');
+    cy.visit('/examples/popup');
     cy.get('iframe').should('not.exist');
     cy.get('#button').click();
     cy.get('iframe').should('be.visible');
