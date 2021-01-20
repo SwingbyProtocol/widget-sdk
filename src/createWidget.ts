@@ -14,6 +14,7 @@ type Options<R extends SkybridgeResource, M extends SkybridgeMode> = {
   defaultCurrencyReceiving?: SkybridgeCoin<R, M, 'out'>;
   defaultAddressReceiving?: string;
   defaultAmountDesired?: string;
+  affiliateCode?: string;
   locale?: string;
   hash?: string;
   /** @default `auto` */
@@ -33,6 +34,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   defaultCurrencyReceiving,
   defaultAddressReceiving,
   defaultAmountDesired,
+  affiliateCode,
 }: Options<R, M>): Widget => {
   const url = stringifyUrl({
     url: 'https://widget.skybridge.exchange',
@@ -46,6 +48,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
       defaultAddressReceiving,
       defaultAmountDesired,
       theme,
+      aff: affiliateCode,
     },
   });
 
