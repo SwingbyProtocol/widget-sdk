@@ -13,14 +13,14 @@ yarn add @swingby-protocol/widget @swingby-protocol/sdk
 ```tsx
 import { createWidget, openPopup } from '@swingby-protocol/widget';
 
-const widget = createWidget({ mode: 'test', resource: 'swap', size: 'big' });
+const widget = createWidget({ mode: 'test', resource: 'swap', size: 'big', bridge: 'btc_erc' });
 openPopup({ widget });
 ```
 
 ```tsx
 import { createWidget, getHtml } from '@swingby-protocol/widget';
 
-const widget = createWidget({ mode: 'test', resource: 'swap', size: 'banner' });
+const widget = createWidget({ mode: 'test', resource: 'swap', size: 'banner', bridge: 'btc_erc' });
 document.querySelector('#my-container').innerHTML = getHtml({ widget });
 ```
 

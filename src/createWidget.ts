@@ -1,4 +1,9 @@
-import type { SkybridgeCoin, SkybridgeMode, SkybridgeResource } from '@swingby-protocol/sdk';
+import type {
+  SkybridgeBridge,
+  SkybridgeCoin,
+  SkybridgeMode,
+  SkybridgeResource,
+} from '@swingby-protocol/sdk';
 import { stringifyUrl } from 'query-string';
 
 import type { Size } from './Size';
@@ -20,6 +25,7 @@ type Options<R extends SkybridgeResource, M extends SkybridgeMode> = {
   /** @default `auto` */
   theme?: 'light' | 'dark' | 'auto';
   primaryColor?: string;
+  bridge?: SkybridgeBridge;
 };
 
 export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMode>({
@@ -35,6 +41,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
   defaultAddressReceiving,
   defaultAmountDesired,
   affiliateCode,
+  bridge,
 }: Options<R, M>): Widget => {
   const url = stringifyUrl({
     url: 'https://widget.skybridge.exchange',
@@ -49,6 +56,7 @@ export const createWidget = <R extends SkybridgeResource, M extends SkybridgeMod
       defaultAmountDesired,
       theme,
       aff: affiliateCode,
+      bridge,
     },
   });
 
